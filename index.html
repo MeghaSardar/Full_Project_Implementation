@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="3.css">
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <header>
+    <nav>
+      <h1>Megha Sardar</h1>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
+
+  </header>
+
+  <!-- PORTFOLIO INTERFACE -->
+  <section id="portfolio">
+    <!-- ABOUT -->
+    <div id="about">
+      <h1> About </h1>
+      <p>I am currently a 3rd-year B.Tech student in Electronics and Communication Engineering with a strong interest in embedded systems and hardware development. I have practical knowledge in C, HTML, and Arduino, and have completed academic projects involving sensors, microcontrollers, and circuit design.Seeking internship or project opportunities to apply and expand my technical skills in real-world electronics applications.
+
+</p>
+    </div>
+
+    <!-- PROJECTS -->
+    <div id="projects">
+      <h2>My Projects</h2>
+      <ol class="project-list">
+        <li> Programmable Scientific Calculator (C Language)
+              Developed a user-interface-based calculator in C that performs
+               arithmetic, logarithmic, derivative, and integration operations.</li>
+        <li> Smart Temperature Predictor (Arduino UNO)
+               Built a system using LM35 and LDR to measure resistance changes
+               with temperature and predict environmental conditions using
+               Arduino.</li>
+      </ol>
+    </div>
+
+    <!-- CONTACT -->
+    <div id="contact">
+      <h2>Contact Me</h2>
+      <p><strong>Phone:</strong> +91 907348....</p>
+      <p><strong>Email:</strong>meghasardar632@gmail.com</p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/megha-sardar-aug19" target="_blank">linkedin.com/in/yourprofile</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/MeghaSardar" target="_blank">github.com/yourusername</a></p>
+    </div>
+
+    <!-- ACTION BUTTONS -->
+    <div class="actions">
+      <button onclick="openProductPage()">🛍 Open Product List</button>
+      <button onclick="openTodoPage()">📝 Open To-Do List</button>
+    </div>
+  </section>
+
+  <!-- PRODUCT LIST INTERFACE -->
+  <section id="productPage" class="hidden">
+    <h2>🛍 Product Listing</h2>
+    <button onclick="closePages()" class="backBtn">⬅ Back to Portfolio</button>
+
+    <div class="filters">
+      <select id="categoryFilter" onchange="filterProducts()">
+        <option value="all">All</option>
+        <option value="electronics">Electronics</option>
+        <option value="clothing">Clothing</option>
+      </select>
+      <select id="sortFilter" onchange="sortProducts()">
+        <option value="default">Sort By</option>
+        <option value="priceLow">Price: Low to High</option>
+        <option value="priceHigh">Price: High to Low</option>
+        <option value="rating">Rating</option>
+      </select>
+    </div>
+    <div id="productList" class="grid"></div>
+  </section>
+
+  <!-- TO-DO LIST INTERFACE -->
+  <section id="todoPage" class="hidden">
+    <h2>📝 My To-Do List</h2>
+    <button onclick="closePages()" class="backBtn">⬅ Back to Portfolio</button>
+
+    <input type="text" id="taskInput" placeholder="Enter task...">
+    <button onclick="addTask()">Add Task</button>
+    <ul id="taskList"></ul>
+  </section>
+
+  <script src="3.js"></script>
+</body>
+</html>
